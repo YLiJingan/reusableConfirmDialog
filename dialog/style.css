@@ -1,0 +1,77 @@
+.dialog-wrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(49, 49, 49, 0.5);
+  color: #313131;
+  font-size: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dialog-wrapper.fadeIn {
+  animation: fadeIn .2s ease;
+}
+
+.dialog-wrapper.fadeOut {
+  animation: fadeOut .2s ease forwards;
+}
+
+.dialog-wrapper .dialog {
+  position: relative;
+  width: 85vw;
+  max-width: 30em;
+  border-radius: .4em;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.dialog-wrapper .dialog .btn {
+  cursor: pointer;
+}
+
+.dialog-wrapper .dialog .btn:active {
+  background-color: #f4f4f4;
+}
+
+.dialog-wrapper .dialog .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 1.8em;
+}
+
+.dialog-wrapper .dialog .content {
+  padding: 40px 20px;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.dialog-wrapper .dialog .buttons {
+  font-size: 1.6em;
+  display: flex;
+  flex-flow: row-reverse;
+}
+
+.dialog-wrapper .dialog .buttons .btn {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #ebebeb;
+}
+
+.dialog-wrapper .dialog .buttons .btn.ok-btn {
+  color: #f2d985;
+}
+
+.dialog-wrapper .dialog .buttons .btn.cancel-btn {
+  color: #313131;
+  border-right: 1px solid #ebebeb;
+}
