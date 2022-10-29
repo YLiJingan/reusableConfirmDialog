@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dialog demo</title>
+  <script src="./../dialog/index.js"></script>
+  <script>
+    const handleButtonClick = () => {
+      dialog.show({
+        content: 'Are you sure want to continue?',
+        okText: 'Yes',
+        cancelText: 'Cancel'
+      })
+    }
+  </script>
+</head>
+<body>
+  <button onclick={handleButtonClick()}>click me</button>
+</body>
+</html>
