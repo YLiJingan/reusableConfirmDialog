@@ -5,18 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>dialog demo</title>
+  <link rel="STYLESHEET" href="./../dialog/style.css" type="text/css">
   <script src="./../dialog/index.js"></script>
   <script>
-    const handleButtonClick = () => {
-      dialog.show({
+    const handleBtnClick = () => {
+      window.dialog.show({
         content: 'Are you sure want to continue?',
         okText: 'Yes',
-        cancelText: 'Cancel'
+        cancelText: 'Cancel',
+        onOk: () => {}
+      })
+    }
+    const handleBtnNoClick = () => {
+      window.dialog.show({
+        content: "Don't click me"
       })
     }
   </script>
 </head>
 <body>
-  <button onclick={handleButtonClick()}>click me</button>
+  <button onclick={handleBtnClick()}>click me</button>
+  <div></div>
+  <button onclick={handleBtnNoClick()}>don't click me</button>
 </body>
 </html>
