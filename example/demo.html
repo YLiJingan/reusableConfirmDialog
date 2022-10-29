@@ -13,12 +13,13 @@
         content: 'Are you sure want to continue?',
         okText: 'Yes',
         cancelText: 'Cancel',
-        onOk: () => {}
+        onOk: () => { console.log('You clicked Yes button') },
       })
     }
     const handleBtnNoClick = () => {
       window.dialog.show({
-        content: "Don't click me"
+        content: "Don't click me",
+        onCancel: () => { console.log('You clicked cancel button') }
       })
     }
   </script>
