@@ -1,6 +1,8 @@
 const dialog = (function () {
-  let element, dialog, cancelBtn, okBtn;
+let element, dialog, cancelBtn, okBtn;
 
+let animaArr = new Array(['fadeIn', 'fadeOut'], ['slideDown', 'slideUp']);
+let currAnimation = '';
 const getNeedelementent = () => {
     element = document.querySelector('.dialog-wrapper');
     dialog = element.querySelector('.dialog');
@@ -15,12 +17,14 @@ const show =(options = {}) => {
       cancelText = 'cancel',
       onOk = null,
       onCancel = null,
-      maskDisabled = false
+      maskDisabled = false,
+      animation = 1
   } = options;
 
+  currAnimation = animation;
   const html = `
-    <div class="dialog-wrapper">
-      <div class="dialog">
+    <div class="dialog-wrapper fadeIn">
+      <div class="dialog ${animaArr[currAnimation][0]}">
         <div class="content">${content}</div>
         <div class="buttons">
           <div class="btn ok-btn">${okText}</div>
@@ -55,6 +59,8 @@ const bindEvent = (onOk, onCancel, maskDisabled) => {
 }
 
 const hide = () => {
+  element.classList.add('fadeOut');
+  dialog.classList.add(`${animaArr[currAnimation][1]}`);
   setTimeout(() => {
     element.remove();
   }, 200);
